@@ -4,12 +4,12 @@ TODO
 
 ## GitHub Pages URL
 
-TODO
+<https://zwbetz-gh.github.io/github-pages-deploy-pleasejs/>
 
 ## Setup
 
 1. Install Python version 3.8 or higher
-1. Install package GitHub Pages Import
+1. Install package `GitHub Pages Import`
 
         pip install ghp-import
 
