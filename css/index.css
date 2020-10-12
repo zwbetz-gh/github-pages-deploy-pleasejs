@@ -1,0 +1,9 @@
+#result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  font-weight: bold;
+  font-size: 300%;
+  border-radius: 0.3rem;
+}
