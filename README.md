@@ -1,22 +1,26 @@
-# GitHub Pages Deploy
+# GitHub Pages Deploy for PleaseJS
 
 TODO
 
 ## GitHub Pages URL
 
-<https://zwbetz-gh.github.io/github-pages-deploy>
+TODO
 
 ## Setup
 
-1. Install Python version 3 or higher
-1. Install GitHub Pages Import
+1. Install Python version 3.8 or higher
+1. Install package GitHub Pages Import
 
         pip install ghp-import
 
 ## Build
 
-TODO
+    ./task_build.sh
+
+## Serve
+
+    ./task_serve.sh
 
 ## Deploy
 
-TODO
+    ./task_deploy.sh

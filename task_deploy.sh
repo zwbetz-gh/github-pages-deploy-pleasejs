@@ -2,12 +2,13 @@
 
 REQUIRED_TOOLS=(
   git
+  python
   ghp-import
 )
 
 for tool in ${REQUIRED_TOOLS[@]}; do
   if ! command -v ${tool} >/dev/null; then
-    echo "Tool [${tool}] is required"
+    echo "Tool ${tool} is required"
     exit 1
   fi
 done
