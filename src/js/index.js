@@ -1,29 +1,66 @@
 (function () {
-  function getColor() {
+  function makeColor() {
     const color = Please.make_color()[0];
     return color;
   }
 
+  function getColorContainerEl() {
+    const el = document.querySelector('#color_container');
+    return el;
+  }
+
+  function makeGridRowEl() {
+    const el = document.createElement('div');
+    el.className = 'row';
+    return el;
+  }
+
+  function makeGridColEl() {
+    const el = document.createElement('div');
+    el.className = 'col-sm';
+    return el;
+  }
+
+  function makeColorEl() {
+    const color = makeColor();
+    const el = document.createElement('div');
+    el.className = 'single_color';
+    el.innerText = color;
+    el.style.backgroundColor = color;
+    return el;
+  }
+
+  function clearColors() {
+    const colorContainerEl = getColorContainerEl();
+
+    while (colorContainerEl.firstChild) {
+      colorContainerEl.removeChild(colorContainerEl.lastChild);
+    }
+  }
+
+  function makeColors() {
+    const TOTAL_COLORS = 15;
+    const GRID_COLS_PER_ROW = 3;
+
+    const colorContainerEl = getColorContainerEl();
+
+    for (let i = 0; i < TOTAL_COLORS; i++) {
+      const colorEl = makeColorEl();
+
+      if (i % GRID_COLS_PER_ROW === 0) {
+        const gridRowEl = makeGridRowEl();
+        colorContainerEl.appendChild(gridRowEl);
+      }
+
+      const gridColEl = makeGridColEl();
+      gridColEl.appendChild(colorEl);
+      colorContainerEl.lastChild.appendChild(gridColEl);
+    }
+  }
+
   function clickEvent() {
-    const manyColorsEl = document.querySelector('#many_colors');
-
-    // Clear old colors
-    while (manyColorsEl.firstChild) {
-      manyColorsEl.removeChild(manyColorsEl.lastChild);
-    }
-
-    // Make new colors
-    for (let i = 0; i < 3; i++) {
-      const color = getColor();
-      console.log(color);
-
-      const colorEl = document.createElement('div');
-      colorEl.className = 'single_color';
-      colorEl.innerText = color;
-      colorEl.style.backgroundColor = color;
-
-      manyColorsEl.appendChild(colorEl);
-    }
+    clearColors();
+    makeColors();
   }
 
   function addEventListener() {
